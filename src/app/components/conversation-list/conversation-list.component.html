@@ -10,69 +10,17 @@
     </div>
   </div>
   <ul class="users">
-    <li class="person" data-chat="person1">
+    <li class="person" data-chat="person1" *ngFor="let item of list">
       <div class="user">
         <img src="assets/img/avatar.png">
         <span class="status online"></span>
       </div>
       <p class="name-time">
-        <span class="name">Steve Bangalter</span>
+        <span class="name">{{ item.participants[1].username }}</span>
         &nbsp;
-        <span class="time">15/02/2019</span>
+        <span class="time">{{ item.last_message.timestamp | date:'short' }}</span>
       </p>
       <p>
-
-      </p>
-    </li>
-    <li class="person" data-chat="person1">
-      <div class="user">
-        <img src="assets/img/avatar.png">
-      </div>
-      <p class="name-time">
-        <span class="name">Steve Bangalter</span>
-        &nbsp;
-        <span class="time">15/02/2019</span>
-      </p>
-    </li>
-    <li class="person active-user" data-chat="person2">
-      <div class="user">
-        <img src="assets/img/avatar.png">
-      </div>
-      <p class="name-time">
-        <span class="name">Peter Gregor</span>
-        &nbsp;
-        <span class="time">12/02/2019</span>
-      </p>
-    </li>
-    <li class="person" data-chat="person3">
-      <div class="user">
-        <img src="assets/img/avatar.png">
-        <span class="status online"></span>
-      </div>
-      <p class="name-time">
-        <span class="name">Jessica Larson</span>
-        &nbsp;
-        <span class="time">11/02/2019</span>
-      </p>
-    </li>
-    <li class="person" data-chat="person4">
-      <div class="user">
-        <img src="assets/img/avatar.png">
-      </div>
-      <p class="name-time">
-        <span class="name">Lisa Guerrero</span>
-        &nbsp;
-        <span class="time">08/02/2019</span>
-      </p>
-    </li>
-    <li class="person" data-chat="person5">
-      <div class="user">
-        <img src="assets/img/avatar.png">
-      </div>
-      <p class="name-time">
-        <span class="name">Michael Jordan</span>
-        &nbsp;
-        <span class="time">05/02/2019</span>
       </p>
     </li>
   </ul>
