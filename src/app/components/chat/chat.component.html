@@ -4,10 +4,24 @@
   </div>
   <div class="chat-container">
     <ul class="chat-box chatContainerScroll">
-      <app-chat-message *ngFor="let message of selectedConversation.messages" [message]="message"></app-chat-message>
+      <app-chat-message
+        *ngFor="let message of selectedConversation.messages"
+        [message]="message"
+        [user]="getUser(message)"
+      ></app-chat-message>
     </ul>
-    <div class="form-group mt-3 mb-0">
-      <textarea class="form-control" rows="3" placeholder="Type your message here..."></textarea>
-    </div>
+    <form
+      class="form-group mt-3 mb-0"
+      (submit)="onPostMessage()"
+    >
+      <textarea
+        class="form-control"
+        rows="3"
+        placeholder="Type your message here..."
+        name="message"
+        [(ngModel)]="newMessage"
+      ></textarea>
+      <button type="submit">Submit</button>
+    </form>
   </div>
 </ng-container>

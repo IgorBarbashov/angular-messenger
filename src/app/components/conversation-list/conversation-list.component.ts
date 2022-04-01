@@ -1,6 +1,6 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {conversationListMock} from "../../../mocks/conversation-list.mock";
-import {BaseConversationModel} from "../../../models/conversation.model";
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { conversationListMock } from "../../../mocks/conversation-list.mock";
+import { BaseConversationModel } from "../../../models/conversation.model";
 
 @Component({
   selector: 'app-conversation-list',
