@@ -1,22 +1,13 @@
-<div class="card m-0">
-  <!-- Row start -->
-  <div class="row no-gutters">
-    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-3">
-      <app-conversation-list></app-conversation-list>
-    </div>
-    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-9 col-9">
-      <div class="selected-user">
-        <span>To: <span class="name">Emily Russell</span></span>
-      </div>
-      <div class="chat-container">
-        <ul class="chat-box chatContainerScroll">
-          <app-chat-message></app-chat-message>
-        </ul>
-        <div class="form-group mt-3 mb-0">
-          <textarea class="form-control" rows="3" placeholder="Type your message here..."></textarea>
-        </div>
-      </div>
+<ng-container *ngIf="selectedConversation">
+  <div class="selected-user">
+    <span>To: <span class="name">{{ selectedConversation.participants[1].username }}</span></span>
+  </div>
+  <div class="chat-container">
+    <ul class="chat-box chatContainerScroll">
+      <app-chat-message *ngFor="let message of selectedConversation.messages" [message]="message"></app-chat-message>
+    </ul>
+    <div class="form-group mt-3 mb-0">
+      <textarea class="form-control" rows="3" placeholder="Type your message here..."></textarea>
     </div>
   </div>
-  <!-- Row end -->
-</div>
+</ng-container>
