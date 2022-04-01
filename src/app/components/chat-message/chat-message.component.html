@@ -1,0 +1,11 @@
+<li [ngClass]="{ 'chat-right': message?.sender === currentUser.id, 'chat-left': message?.sender !== currentUser.id }">
+  <div
+    class="chat-avatar"
+    [appStatus]="user?.last_seen === 'online'"
+  >
+    <img src="assets/img/avatar.png">
+    <div class="chat-name">{{ user?.username }}</div>
+  </div>
+  <div class="chat-text">{{ message?.message }}</div>
+  <div class="chat-hour">{{ message?.timestamp | date:'short' }}</div>
+</li>
